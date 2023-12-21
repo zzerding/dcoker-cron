@@ -14,10 +14,6 @@ trap 'cleanup' SIGINT SIGTERM
 # Define the log file path
 LOG_FILE=/var/log/cron.log
 
-# git config set
-mkdir -p /root/.ssh && \
-echo "StrictHostKeyChecking no" >> /root/.ssh/config && \
-echo "UserKnownHostsFile /dev/null" >> /root/.ssh/config
 
 #crontab
 touch "$LOG_FILE"
