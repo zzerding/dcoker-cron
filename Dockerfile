@@ -8,6 +8,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 RUN mkdir -p /root/.ssh && \
 echo "StrictHostKeyChecking no" >> /root/.ssh/config && \
 echo "UserKnownHostsFile /dev/null" >> /root/.ssh/config
-COPY ./init.sh /init.sh
+COPY ./init.sh /var/run/init.sh
 WORKDIR /app
-CMD ["/bin/bash", "/init.sh"]
+CMD ["/bin/bash", "/var/run/init.sh"]
