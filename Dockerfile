@@ -5,7 +5,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt update && apt-get --no-install-recommends install -y git sqlite3  ssh cron
 # git config set
-RUN mkdir -p /root/.ssh && \
+RUN mkdir -p /var/run/script &&\
+mkdir -p /root/.ssh && \
 echo "StrictHostKeyChecking no" >> /root/.ssh/config && \
 echo "UserKnownHostsFile /dev/null" >> /root/.ssh/config
 COPY ./init.sh /var/run/init.sh
