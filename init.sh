@@ -28,7 +28,7 @@ crontab $CRON_FILE && service cron restart
 echo "run other script to $SCRIPT_DIR $(ls -alh $SCRIPT_DIR)"
 
 if [[ -d  "$SCRIPT_DIR" ]]; then
-  find $SCRIPT_DIR -name "*.sh" -type f  -exec chmod +x {} \; -exec {} \; 
+  find $SCRIPT_DIR -name "*.sh" -type f   -exec {} \; 
 fi
 
 # Output logs for monitoring script execution
