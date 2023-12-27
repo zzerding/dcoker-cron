@@ -5,7 +5,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt update && apt-get --no-install-recommends install -y git sqlite3  ssh cron curl  ca-certificates
 # git config set
-RUN mkdir -p /var/run/script &&\
+RUN mkdir -p /var/run/script 
 COPY ./init.sh /var/run/init.sh
 WORKDIR /app
 CMD ["/bin/bash", "/var/run/init.sh"]
